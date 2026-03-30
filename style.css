@@ -5,29 +5,29 @@
 }
 
 body{
-    background:#547792;
+    background:#0f1318;
     color:white;
     font-family:Arial, sans-serif;
 }
 
-/* Navbar */
-.navbar{
-    background:#1A3263;
+.head{
+    display: flex;
+    background:#0f1318;
     padding:20px;
-    text-align:center;
+    text-align:left;
 }
 
-.navbar h1{
-    color:red;
+.navbar{
+    display: flex;
+    color:white;
 }
 
-/* Container */
 .container{
     width:90%;
     margin:auto;
 }
 
-/* Search Section */
+
 .controls{
     display:flex;
     justify-content:space-between;
@@ -35,26 +35,29 @@ body{
 }
 
 input{
+    border-radius: 10px;
+    border:none;
+    width:550px;
     padding:10px;
-    width:250px;
+    font-size:16px;
 }
 
 button{
     padding:10px 15px;
-    background:red;
-    color:white;
+    background: #d4952a;
+    border-radius: 10px;
+    color:black;
     border:none;
     cursor:pointer;
 }
 
-/* Movie Grid */
+
 .movie-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(200px,1fr));
     gap:20px;
 }
 
-/* Movie Card */
 .movie-card{
     background:#222;
     border-radius:5px;
@@ -78,4 +81,32 @@ button{
 .info p{
     font-size:14px;
     color:gray;
+}
+
+.controls{
+    display:flex;
+    flex-direction:column;   
+    align-items:center;      
+    margin:30px 0;
+}
+
+.search-box{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    margin-bottom:15px;
+}
+
+.filter-box select{
+    gap:10px;
+    border-radius: 10px;
+    height: auto;
+    width: 200px;
+    height: 40px;
+    justify-content:center;
+}
+
+.placeholder-text{
+    display: flex;
+    justify-content: center;
 }
