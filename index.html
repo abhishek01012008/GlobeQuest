@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlobeQuest - Movie Explorer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container header-content">
+            <h1>🎬 GlobeQuest</h1>
+            <p>Your Personal Movie Directory</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="controls">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search for a movie (e.g., Batman)...">
+                <button id="searchBtn">Search</button>
+            </div>
+            
+            <div class="filter-box">
+                <select id="yearFilter" title="Filter by Year">
+                    <option value="all">Filter: All Years</option>
+                    <option value="2020s">2020s</option>
+                    <option value="2010s">2010s</option>
+                    <option value="older">Older</option>
+                </select>
+
+                <select id="sortMovies" title="Sort Movies">
+                    <option value="default">Sort By: Default</option>
+                    <option value="year-desc">Newest First</option>
+                    <option value="year-asc">Oldest First</option>
+                    <option value="title-asc">Title (A-Z)</option>
+                    <option value="title-desc">Title (Z-A)</option>
+                </select>
+            </div>
+        </section>
+
+        <section id="movieGrid" class="movie-grid">
+            <div class="placeholder-text">
+                Enter a search term above to find movies!
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
