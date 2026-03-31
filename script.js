@@ -8,11 +8,11 @@ let allMoviesData = [];
 let displayedMovies = [];
 
 const API_KEY = '443147e8';
-const BASE_URL = `https://www.omdbapi.com/?apikey=${API_KEY}&s=`;
+const URL = `https://www.omdbapi.com/?apikey=${API_KEY}&s=`;
 
 async function fetchMovies(searchTerm) {
     try {
-        const response = await fetch(`${BASE_URL}${encodeURIComponent(searchTerm)}`);
+        const response = await fetch(`${URL}${encodeURIComponent(searchTerm)}`);
         const data = await response.json();
         if (data.Response === "True") {
             allMoviesData = data.Search; 
