@@ -49,12 +49,49 @@ function renderMovies(moviesArray) {
     movieGrid.innerHTML = cardsMarkup;
 }
 
+
 yearFilter.addEventListener('change', () => {
-   
+    const value = yearFilter.value;
+
+    let filtered = [...allMoviesData];
+
+    if (value === "2020s") {
+        filtered = filtered.filter(movie => parseInt(movie.Year) >= 2020);
+    } 
+    else if (value === "2010s") {
+        filtered = filtered.filter(movie => {
+            const year = parseInt(movie.Year);
+            return year >= 2010 && year < 2020;
+        });
+    } 
+    else if (value === "older") {
+        filtered = filtered.filter(movie => parseInt(movie.Year) < 2010);
+    }
+
+    displayedMovies = filtered;
+    renderMovies(displayedMovies);
 });
 
 sortMovies.addEventListener('change', () => {
+    const value = sortMovies.value;
 
+    let sorted = [...displayedMovies];
+
+    if (value === "year-desc") {
+        sorted.sort((a, b) => parseInt(b.Year) - parseInt(a.Year));
+    } 
+    else if (value === "year-asc") {
+        sorted.sort((a, b) => parseInt(a.Year) - parseInt(b.Year));
+    } 
+    else if (value === "title-asc") {
+        sorted.sort((a, b) => a.Title.localeCompare(b.Title));
+    } 
+    else if (value === "title-desc") {
+        sorted.sort((a, b) => b.Title.localeCompare(a.Title));
+    }
+
+    displayedMovies = sorted;
+    renderMovies(displayedMovies);
 });
 
 searchBtn.addEventListener('click', () => {
