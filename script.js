@@ -7,7 +7,7 @@ const movieGrid = document.getElementById('movieGrid');
 let allMoviesData = []; 
 let displayedMovies = [];
 
-const API_KEY = '443147e8';
+const API_KEY = '4a31ab20';
 const URL = `https://www.omdbapi.com/?apikey=${API_KEY}&s=`;
 
 async function fetchMovies(searchTerm) {
@@ -37,17 +37,15 @@ function renderMovies(moviesArray) {
         return;
     }
     
-    const cardsMarkup = moviesArray.map(movie => `
-        <div class="movie-card">
+    const cardsMarkup = moviesArray.map(movie =>
+        `<div class="movie-card">
             <img class="poster" src="${movie.Poster !== "N/A" ? movie.Poster : 'https://via.placeholder.com/300x450?text=No+Poster'}" alt="${movie.Title}">
             <div class="info">
                 <h3>${movie.Title}</h3>
                 <p>Release Year: <strong>${movie.Year}</strong></p>
                 <p>Type: <span style="text-transform: capitalize;">${movie.Type}</span></p>
             </div>
-        </div>
-    `).join(''); 
-
+        </div>`).join(''); 
     movieGrid.innerHTML = cardsMarkup;
 }
 
