@@ -14,14 +14,15 @@ async function fetchMovies(searchTerm) {
     try {
         const response = await fetch(`${URL}${encodeURIComponent(searchTerm)}`);
         const data = await response.json();
-        if (data.Response === "True") {
+        if(data.Response === "True"){
             allMoviesData = data.Search; 
             displayedMovies = [...allMoviesData];
-                        renderMovies(displayedMovies);
-        } else {
+            renderMovies(displayedMovies);
+        } 
+        else{
             movieGrid.innerHTML = `<div class="placeholder-text">${data.Error} (Try being more specific)</div>`;
         }
-    } catch (error) {
+    } catch(error){
         console.error("Failed to fetch data", error);
         movieGrid.innerHTML = `<div class="placeholder-text">Network Error. Please try again later.</div>`;
     }
@@ -35,7 +36,7 @@ function renderMovies(moviesArray) {
         movieGrid.innerHTML = `<div class="placeholder-text">No active results.</div>`;
         return;
     }
-
+    
     const cardsMarkup = moviesArray.map(movie => `
         <div class="movie-card">
             <img class="poster" src="${movie.Poster !== "N/A" ? movie.Poster : 'https://via.placeholder.com/300x450?text=No+Poster'}" alt="${movie.Title}">
