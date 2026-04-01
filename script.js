@@ -107,3 +107,8 @@ searchInput.addEventListener('keypress', (e) => {
         searchBtn.click();
     }
 });
+
+window.addEventListener('load', () => {
+    movieGrid.innerHTML = `<div class="placeholder-text">Loading movies... 🍿</div>`;
+    fetchMovies("avengers");
+});
