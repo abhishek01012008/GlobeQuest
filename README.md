@@ -33,6 +33,7 @@ GlobeQuest/
 ├── index.html      # Main webpage
 ├── style.css       # Styling for the website
 ├── script.js       # JavaScript functionality
+├── images          # Images
 └── README.md       # Project documentation
 ```
 
